@@ -1,0 +1,108 @@
+The role of hatchery origin in early marine residence and survival of Interior Columbia River spring and summer Chinook salmon (Oncorhynchus tshawytscha),,
+"RF,AW,BB,CM,JM",,
+,,
+Corresponding author: forneyr@oregonstate.edu,,
+,,
+ORCID:,,
+RF: 0009-0007-0928-2787,,
+,,
+Rscript Files,,
+,,
+1_IntSp_Analysis_Capture.R,,
+,1_TrawlIDs_May2015-2021.csv,
+,,
+2_IntSp_Analysis_oceantime_growth.R,,
+,2_OceanMetrics.csv,
+,,
+3_RMIS_SIZE_MASS_JSOES.R,,
+,3_SIZEMASSCOMP.csv,
+,,
+4_SARs,,
+,4_SARs,
+,,
+Metadata ,,
+,,
+1_TrawlIDs_May2015-2021.csv,,
+,Month,JSOES Survey Month
+,Year,JSOES Survey Year
+,StationCode,Unique ID for sampling location
+,salmon.id,Unique ID for each salmon caught
+,CommonName,"Common name of species, Chinook Salmon"
+,Age_ClassByLength,Age class determined by fish length in mm (provide definitions)
+,Tag,Was the fish tagged? Yes/No
+,FieldLength_mm,Length of fish in the field
+,LabLength_mm,Length of fish in the lab after freezing 
+,fish_mass,Mass of fish in the lab after freezing
+,FultonCondition,(Mass/(Length^3))*100
+,FINAL_GSI,Stock ID determined through SNPS
+,PBTHatcheryAssignment,Hatchery origin based on PBT Cite: 
+,StartLat,Lat at the start of the trawl at the station 
+,StartLong,Long at the start of the trawl at the station
+,,
+,,
+,,
+,,
+2_OceanMetrics.csv,,
+,salmon.id,Unique ID for each salmon caught
+,Tag,Was the fish tagged? Yes/No
+,FieldLength_mm,Length of fish in the field
+,LabLength_mm,Length of fish in the lab after freezing 
+,fish_mass,Mass of fish in the lab after freezing
+,FultonCondition,(Mass/(Length^3))*100
+,PBTHatcheryAssignment,Hatchery origin based on PBT Cite: 
+,Year,JSOES Survey Year
+,otolith.width.mic,Width of unpolished otolith in microns
+,oe_ow,Ocean entry otolith width determined by chemical scan 
+,oe.julian.day,Julian day of ocean entry 
+,cap.julian.day,Julian day of capture 
+,oceanres.d,Ocean residence time in days
+,ocean.growth,Otolith ocean growth
+,Basin,"Basin assignment determined by PBT results (Mid-Columbia, Upper-Columbia, Snake-River, Wild)"
+,Staion.Code,Unique ID for sampling location
+,Sample.Date,Date when caught 
+,Otolith_Category,"Marine residence category based on methods described in Morgan, C.A., Beckman, B.R., Brodeur, R.D., Burke, B.J., Jacobson, K.C., Miller, J.A., Peterson, W.T., Van Doornik, D.M., Weitkamp, L.A., Zamon, J.E., Baptista, A.M., Daly, E.A.,
+Horne, J.K., and Fresh, K.L., Ocean Survival of Salmonids RME, 1/1/2016 - 12/31/2016, Annual
+Report, 1998-014-00, 71 pp."
+,,
+,,
+3_SIZEMASSCOMP.csv,,
+,year,Year measured 
+,hatchery,Hatchery location
+,h.mass,Hatchery mass 
+,h.length,Hatchery length 
+,origin,Hatchery origin determined by PBT 
+,n,Number caught from origin 
+,cap.length,Capture length 
+,cap.mass,Capture mass 
+,oe.ow,Ocean entry otolith width measurement 
+,,
+,,
+4_SAR_match.csv,,
+,unique_origin,Hatchery origin 
+,GroupDescription,Hatchery and stock information 
+,ocean_dist,Distance of hatchery from ocean entrance 
+,Run,Spring or summer stock 
+,Basin,"Basin assignment determined by PBT results (Mid-Columbia, Upper-Columbia, Snake-River)"
+,MigrYr,Migration year 
+,RearCode,Location reared 
+,RaceCode,Spring or summer stock 
+,SAR_Reach_originalSAR,
+,SARwoJacks,Smolt-to-adult returns without jacks
+,SARwoJacks_LCI,SARwoJacks Lower confidence interval. LGD to BON for Snake River hatcheries and MCN to BON for Mid- and Upper Columbia hatcheries
+,SARwoJacks_UCI,SARwoJacks Upper confidence interval?
+,SARwJacks,Smolt-to-adult returns with jacks
+,SARwJacks_LCI,SARwJacks Lower confidence interval
+,SARwJacks_UCI,SARwJacks Upper confidence interval
+,SRV_LGD_BON_CSS,Hatchery specific in-river survival from LGD to BON from CSS
+,SRV_MCN_BON_annualNOAA,Mean annual in-river survival from MCN to BON from NOAA 
+,inriver_survival_combined,"Sin-river= combined estimate, which includes the SAR estimate for respective population adjusted for in-river survival "
+,dams,Number of dams crossed
+,oceandist_km,Hatchery distance from ocean in km
+,TIR_Transtpinriverratio,"The in-river juvenile survival, which for Snake River hatcheries is LGD to BON and specific to hatchery. For Upper Columbia hatcheries, there are annual estimates of in-river survival from MCN to BON. The Mid-Columbia estimates are from BON to BON and do not require any correction."
+,prop_transport,ST/Sin-river= observed proportion of juveniles that were transported through the hydropower system [applies to Snake River hatcheries only].
+,corSAR_transport,"For Snake River hatcheries: SARBON-BON = SAR × [(Sin-river ×(1? T)) + ( Sin-river × T × ST/Sin-river)], For Upper Columbia River hatcheries: SARBON-BON = SAR × Sin-river, For Middle Columbia River hatcheries: SARBON-BON = SAR"
+,corSARwJ_transport,same as above but for SAR estimate with jacks.
+,,
+,,
+"For Snake River hatcheries, we used LGD to BON estimates from the Fish Passage Center, which are hatchery-specific (McCann et al. 2024, https://www.fpc.org/documents/CSS/2024%20CSS%20Final.pdf).",,
+"For Upper Columbia hatcheries, we used MCN to BON annual estimates of in-river survival for hatchery fish generated by NOAA (Widner et al. 2023:  NOAA Contract Report NMFS-NWFSC-CR-2024-05, https://doi.org/10.25923/tn7y-6b23).",,
